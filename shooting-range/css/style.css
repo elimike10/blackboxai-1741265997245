@@ -1,0 +1,153 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    overflow: hidden;
+    font-family: 'Arial', sans-serif;
+    background-color: #000;
+}
+
+/* Overlay for instructions */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.85);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 100;
+}
+
+#instructions {
+    padding: 2rem;
+    border-radius: 8px;
+    background: rgba(48, 48, 48, 0.9);
+    border: 2px solid #5a5a5a;
+    color: #fff;
+    text-align: center;
+    max-width: 400px;
+}
+
+#instructions h1 {
+    font-size: 24px;
+    margin-bottom: 1rem;
+    color: #8aff8a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+}
+
+.controls-info {
+    margin-top: 1rem;
+    color: #b8b8b8;
+    line-height: 1.6;
+}
+
+/* HUD Elements */
+#hud {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 10;
+}
+
+#hud.hidden {
+    display: none;
+}
+
+/* Crosshair */
+#crosshair {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+}
+
+.crosshair-line {
+    position: absolute;
+    background-color: rgba(0, 255, 0, 0.7);
+}
+
+.crosshair-line.horizontal {
+    width: 20px;
+    height: 2px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.crosshair-line.vertical {
+    width: 2px;
+    height: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+/* Ammo Counter */
+#ammo-counter {
+    position: absolute;
+    bottom: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-family: 'Courier New', monospace;
+    font-size: 20px;
+}
+
+/* Score Display */
+#score-display {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    background: rgba(0, 0, 0, 0.7);
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    font-size: 18px;
+}
+
+/* Hit Marker Animation */
+@keyframes hitMarker {
+    0% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(1.5); }
+}
+
+.hit-marker {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 30px;
+    height: 30px;
+    pointer-events: none;
+    animation: hitMarker 0.3s ease-out forwards;
+}
+
+/* Muzzle Flash Effect */
+.muzzle-flash {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    width: 100px;
+    height: 100px;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.05s ease-out;
+}
+
+.muzzle-flash.active {
+    opacity: 1;
+}
