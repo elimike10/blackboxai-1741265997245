@@ -1,0 +1,39 @@
+{
+    "metadata": {
+        "version": 4.5,
+        "type": "Object",
+        "generator": "Object3D.toJSON"
+    },
+    "geometries": [{
+        "uuid": "gun-body",
+        "type": "BoxGeometry",
+        "width": 0.3,
+        "height": 0.15,
+        "depth": 1,
+        "widthSegments": 1,
+        "heightSegments": 1,
+        "depthSegments": 1
+    }],
+    "materials": [{
+        "uuid": "gun-material",
+        "type": "MeshStandardMaterial",
+        "color": 2236962,
+        "roughness": 0.5,
+        "metalness": 0.8,
+        "emissive": 0,
+        "side": 2
+    }],
+    "object": {
+        "uuid": "m4a1",
+        "type": "Group",
+        "name": "M4A1",
+        "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1],
+        "children": [{
+            "uuid": "gun-mesh",
+            "type": "Mesh",
+            "geometry": "gun-body",
+            "material": "gun-material",
+            "matrix": [1,0,0,0,0,1,0,0,0,0,1,0,0,0,0,1]
+        }]
+    }
+}
